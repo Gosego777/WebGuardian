@@ -1,0 +1,19 @@
+{
+  "name": "webguardian",
+  "version": "1.0.1",
+  "description": "A Web Application Vulnerability Assessment Tool",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron",
+    "html",
+    "css"
+  ],
+  "author": "Gosego Otsweleng",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^29.1.1"
+  }
+}
