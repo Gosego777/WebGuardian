@@ -1,3 +1,4 @@
+//Gosego Otsweleng 03/05/2024
 //run code --> npx nodemon --exec electron .
 // Importing required modules
 const { app, BrowserWindow } = require('electron');
