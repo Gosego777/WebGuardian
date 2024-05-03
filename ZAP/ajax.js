@@ -1,3 +1,4 @@
+//Gosego Otsweleng 03/05/2024
 // Add an event listener to the button
 if (setButton) {
     setButton.addEventListener('click', async () => { // Make the function async
