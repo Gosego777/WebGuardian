@@ -1,3 +1,4 @@
+//Gosego Otsweleng 03/05/2024
 //The traditional Spider is a standard web crawler, it make HTTP(S) requests 
 //and then analyses the responses for links.
 //Test url: https://demo.owasp-juice.shop/runtime.js
