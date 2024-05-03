@@ -1,12 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
-</head>
-<body>
-<p>This is a test page pls</p>    
-</body>
-</html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link href="./style.css" rel="stylesheet">
+    <title>WebGuardian App</title>
+    </style>
+  </head>
+  <body class = "body">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div>
+      <form name = "url" method="post" class = "url" id = "urlForm" onsubmit="return validateForm()">
+        <b><label for="fname">URL</label></b>
+        <input type="text" id="urlInput" name="urlInput"><br><br>
+        <div class = checkbox id = spiders>
+        <label for="text">Please select a spider to crawl the application:</label><br><br>
+        <input type="checkbox" name ="spider" id = "spider1" name="spider1" value="Traditional Spider">
+        <b><label for="spider1">Traditional Spider</label></b><br>
+        <p id = "aSpider">Use the Ajax Spider if you have applications which heavily depend on Ajax or JavaScript.</p>
+        <input type="checkbox" name ="spider" id = "spider2" name="spider2" value="Ajax Spider">
+        <b><label for="spider2">Ajax Spider</label></b><br><br>
+        </div>
+        <b><input type="button" value="Scan" id = "btn"></b>
+      </form>
+     </div>
+     <!-- Including spiders.js -->
+    <script src="../ZAP/spiders.js"></script>
+    <script src="../ZAP/ajax.js"></script>
+    <script src="../ZAP/active.js"></script>
+    <!-- Validation and execution script -->
+    <script>
+        function validateForm() {
+            var urlInput = document.getElementById("urlInput").value;
+            var urlPattern = /^(http|https):\/\/[^ "]+$/;
+
+            if (!urlPattern.test(urlInput)) {
+                alert("Please enter a valid URL");
+                return false;
+            }
+        }
+    </script>
+    <!-- Side navigation -->
+  <div class="sidenav">
+    <b><a href="#">Home</a></b>
+    <b><a href="../newWindow/alerts.html">Alerts</a></b>
+    <b><a href="../newWindow/sites.html">Sites</a></b>
+    <b><a href="../newWindow/history.html">History</a></b>
+    <b><a href="../newWindow/report.html">Report</a></b>
+  </div>
+  <div class = links>
+  <div class="container" id = "container"></div><br><br>
+  <div class="container1" id = "container1"></div><br><br>
+  <div class = "stopmsg" id = "stopmsg"></div><br><br><br>
+  <div class = "scan" id = "scan"></div>
+  </div><br><br>
+  </div><br><br>
+  <div id = "alerts">
+    <div class = "alertsResults" id = "alertsResults"></div>
+  </div>
+  <div class = "view" id = "viewMore">
+  </div>
+  <div class = "chart">
+    <canvas id="alertsChart"></canvas>
+  </div>
+ 
+  </body>
